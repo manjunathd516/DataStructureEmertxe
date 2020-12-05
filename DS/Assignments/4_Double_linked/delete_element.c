@@ -12,14 +12,14 @@ int delete_element(dlist **head, dlist **tail, data_t n_data)
 		if(temp->data == n_data)
 		{
 			
-			if((temp->prev = NULL) && (temp->next = NULL))
+			if((temp->prev == NULL) && (temp->next == NULL))
 			{
 				free(*head);
 				*head = NULL;
 				free(*tail);
 				*tail = NULL;
 			}
-			else if(temp->prev = NULL)//first element
+			else if(temp->prev == NULL)//first element
 			{
 				*head = (*head)->next;
 				free((*head)->prev);
