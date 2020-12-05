@@ -25,12 +25,12 @@ int delete_element(dlist **head, dlist **tail, data_t n_data)
 				free((*head)->prev);
 				(*head)->prev = NULL;
 			}
-			/*else if(temp->next = NULL)
-			{
-				*tail = 
-				free(*tail);
-				*tail = NULL;
-			}*/
+		        else if(temp->next == NULL)
+  3                     {
+  2                              *tail = (*tail)->prev;
+  1                              free((*tail)->next);
+37                               (*tail)->next = NULL;
+  1                     }
 			else
 			{
 				temp->prev->next = temp->next;
